@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Welcome!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-inverse" style="background-color:indigo;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Welcome!!!</a>
+            </div>
+            <!-- <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul> -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="font-style:inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select
+                    Ingrdient</h1>
+                    <p id="GFG_UP"> 
+                    </p> 
+                    
+                    <input type="checkbox" name="type" value="Salt" /> Salt <br>
+                    <input type="checkbox" name="type" value="Sugar" /> Sugar <br>
+                    <input type="checkbox" name="type" value="Water" /> Water <br>
+                    <input type="checkbox" name="type" value="Tomato" /> Tomato <br>
+                    <input type="checkbox" name="type" value="Capcicum" /> Capcicum <br>
+                    <input type="checkbox" name="type" value="Cheez" /> Cheez <br>
+                    <input type="checkbox" name="type" value="Wheat" /> Wheat <br>
+                    <input type="checkbox" name="type" value="Rice" /> Rice <br>
+                    <br> 
+                    <button id="b1"> 
+                        click here 
+                    </button> 
+                    <p id="GFG_DOWN"> 
+                    </p> 
+               </div>
+            <div class="col-md-6">
+                <h1 style="font-style: inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select
+                    Method</h1>
+                </p> 
+                <p id="GFG_UP1"> 
+                </p> 
+                
+                <input type="checkbox" name="type" value="Wash" /> Wash <br>
+                <input type="checkbox" name="type" value="Squeez" /> Squeez <br>
+                <input type="checkbox" name="type" value="Chop" /> Chop <br>
+                <input type="checkbox" name="type" value="Boil" /> Boil <br>
+                <input type="checkbox" name="type" value="Crush" /> Crush <br>
+                <br> 
+                <button id="b2"> 
+                    click here now 
+                </button> 
+                <p id="GFG_DOWN1"> 
+                </p> 
+               
+            </div>
+            </div>
+            <button type="button" class="btn btn-success" style="align-self: center;" id="button">Mix</button>
+            </div>
+            
+            <script> 
+            var array = []; 
+            var array1 = []; 
+
+                $('#GFG_UP') 
+                .text('First check few elements then click on the button.'); 
+                $("#b1").on('click', function() { 
+                    
+                    $("input:checked").each(function() { 
+                        array.push($(this).val()); 
+                    }); 
+                    $('#GFG_DOWN').text(array); 
+                    console.log(array);
+                }); 
+                
+                $('#GFG_UP1') 
+                .text('First check few elements then click on the button.'); 
+                $('#b2').on('click', function() { 
+                   
+                    $("input:checked").each(function() { 
+                        array1.push($(this).val()); 
+                    }); 
+                    $('#GFG_DOWN1').text(array1); 
+                }); 
+                console.log(array1);
+                $("#button").click(function(){
+                //   alert("The paragraph was clicked.");
+                });
+            </script> 
+</body>
+
+</html>
