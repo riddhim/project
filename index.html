@@ -44,7 +44,7 @@
                 <input type="checkbox" name="type" value="Water" /> Water <br>
                 <input type="checkbox" name="type" value="Tomato" /> Tomato <br>
                 <input type="checkbox" name="type" value="Capcicum" /> Capcicum <br>
-                <input type="checkbox" name="type" value="Cheez" /> Cheez <br>
+                <input type="checkbox" name="type" value="Cheez" /> Cheese <br>
                 <input type="checkbox" name="type" value="Wheat" /> Wheat <br>
                 <input type="checkbox" name="type" value="Rice" /> Rice <br>
                 <br>
@@ -79,17 +79,17 @@
     </div>
 
     <script>
-        var ingredient_array = new Set();
-        var method_array = new Set();
-        var resultant = new Set();
+        var ingredient_array = [];
+        var method_array = [];
+        var resultant = [];
 
         $('#GFG_UP')
             .text('First check few elements then click on the button.');
         $("#b1").on('click', function() {
 
             $("input:checked").each(function() {
-                ingredient_array.add($(this).val());
-                resultant.add($(this).val());
+                ingredient_array.push($(this).val());
+                // resultant.add($(this).val());
             });
             $('#GFG_DOWN').text(ingredient_array);
             console.log(ingredient_array);
@@ -101,15 +101,37 @@
         $('#b2').on('click', function() {
 
             $("input:checked").each(function() {
-                method_array.add($(this).val());
-                resultant.add($(this).val());
+                method_array.push($(this).val());
+                // resultant.add($(this).val());
             });
             $('#GFG_DOWN1').text(method_array);
         });
         console.log(method_array);
         $("#button").click(function() {
+            resultant = method_array;
+            // console.log(resultant);
+            
+            // console.log(resultant);
             console.log(resultant);
-            shuffle(resultant);
+            shuffle(resultant)
+            function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+            
+              // Pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex -= 1;
+            
+              // And swap it with the current element.
+              temporaryValue = array[currentIndex];
+              array[currentIndex] = array[randomIndex];
+              array[randomIndex] = temporaryValue;
+            }
+
+  return array;
+}
             console.log(resultant);
         });
     </script>
