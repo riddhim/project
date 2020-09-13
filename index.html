@@ -34,79 +34,85 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 style="font-style:inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select
-                    Ingrdient</h1>
-                    <p id="GFG_UP"> 
-                    </p> 
-                    
-                    <input type="checkbox" name="type" value="Salt" /> Salt <br>
-                    <input type="checkbox" name="type" value="Sugar" /> Sugar <br>
-                    <input type="checkbox" name="type" value="Water" /> Water <br>
-                    <input type="checkbox" name="type" value="Tomato" /> Tomato <br>
-                    <input type="checkbox" name="type" value="Capcicum" /> Capcicum <br>
-                    <input type="checkbox" name="type" value="Cheez" /> Cheez <br>
-                    <input type="checkbox" name="type" value="Wheat" /> Wheat <br>
-                    <input type="checkbox" name="type" value="Rice" /> Rice <br>
-                    <br> 
-                    <button id="b1"> 
+                <h1 style="font-style:inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select Ingrdient
+                </h1>
+                <p id="GFG_UP">
+                </p>
+
+                <input type="checkbox" name="type" value="Salt" /> Salt <br>
+                <input type="checkbox" name="type" value="Sugar" /> Sugar <br>
+                <input type="checkbox" name="type" value="Water" /> Water <br>
+                <input type="checkbox" name="type" value="Tomato" /> Tomato <br>
+                <input type="checkbox" name="type" value="Capcicum" /> Capcicum <br>
+                <input type="checkbox" name="type" value="Cheez" /> Cheez <br>
+                <input type="checkbox" name="type" value="Wheat" /> Wheat <br>
+                <input type="checkbox" name="type" value="Rice" /> Rice <br>
+                <br>
+                <button id="b1"> 
                         click here 
-                    </button> 
-                    <p id="GFG_DOWN"> 
-                    </p> 
-               </div>
+                    </button>
+                <p id="GFG_DOWN">
+                </p>
+            </div>
             <div class="col-md-6">
-                <h1 style="font-style: inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select
-                    Method</h1>
-                </p> 
-                <p id="GFG_UP1"> 
-                </p> 
-                
+                <h1 style="font-style: inherit; color:darkred; font-size: x-large; font-family: sans-serif;">Select Method
+                </h1>
+                </p>
+                <p id="GFG_UP1">
+                </p>
+
                 <input type="checkbox" name="type" value="Wash" /> Wash <br>
                 <input type="checkbox" name="type" value="Squeez" /> Squeez <br>
                 <input type="checkbox" name="type" value="Chop" /> Chop <br>
                 <input type="checkbox" name="type" value="Boil" /> Boil <br>
                 <input type="checkbox" name="type" value="Crush" /> Crush <br>
-                <br> 
+                <br>
                 <button id="b2"> 
                     click here now 
-                </button> 
-                <p id="GFG_DOWN1"> 
-                </p> 
-               
-            </div>
-            </div>
-            <button type="button" class="btn btn-success" style="align-self: center;" id="button">Mix</button>
-            </div>
-            
-            <script> 
-            var array = []; 
-            var array1 = []; 
+                </button>
+                <p id="GFG_DOWN1">
+                </p>
 
-                $('#GFG_UP') 
-                .text('First check few elements then click on the button.'); 
-                $("#b1").on('click', function() { 
-                    
-                    $("input:checked").each(function() { 
-                        array.push($(this).val()); 
-                    }); 
-                    $('#GFG_DOWN').text(array); 
-                    console.log(array);
-                }); 
-                
-                $('#GFG_UP1') 
-                .text('First check few elements then click on the button.'); 
-                $('#b2').on('click', function() { 
-                   
-                    $("input:checked").each(function() { 
-                        array1.push($(this).val()); 
-                    }); 
-                    $('#GFG_DOWN1').text(array1); 
-                }); 
-                console.log(array1);
-                $("#button").click(function(){
-                //   alert("The paragraph was clicked.");
-                });
-            </script> 
+            </div>
+        </div>
+        <button type="button" class="btn btn-success" style="align-self: center;" id="button">Mix</button>
+    </div>
+
+    <script>
+        var ingredient_array = new Set();
+        var method_array = new Set();
+        var resultant = new Set();
+
+        $('#GFG_UP')
+            .text('First check few elements then click on the button.');
+        $("#b1").on('click', function() {
+
+            $("input:checked").each(function() {
+                ingredient_array.add($(this).val());
+                resultant.add($(this).val());
+            });
+            $('#GFG_DOWN').text(ingredient_array);
+            console.log(ingredient_array);
+
+        });
+
+        $('#GFG_UP1')
+            .text('First check few elements then click on the button.');
+        $('#b2').on('click', function() {
+
+            $("input:checked").each(function() {
+                method_array.add($(this).val());
+                resultant.add($(this).val());
+            });
+            $('#GFG_DOWN1').text(method_array);
+        });
+        console.log(method_array);
+        $("#button").click(function() {
+            console.log(resultant);
+            shuffle(resultant);
+            console.log(resultant);
+        });
+    </script>
 </body>
 
 </html>
